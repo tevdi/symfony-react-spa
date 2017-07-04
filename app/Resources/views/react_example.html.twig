@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div>
+    <!-- {{ dump (props)}} -->
+    {{ react_component('ExampleApp', {'props': props, 'rendering': 'both'}) }}
+</div>
+{% endblock %}

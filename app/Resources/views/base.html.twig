@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{asset('favicon.ico')}}">
+
+    <title>Symfony React</title>
+    {% block stylesheets %}
+        <link href="{{ asset('./webpack-client/stylesheets/client-bundle.css', 'webpack')}}" rel="stylesheet">
+    {% endblock %}
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ url('homepage') }}">Drupal React</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{{ url('homepage') }}">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Players
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url('homepage') }}player/1">First Player</a></li>
+                        <li><a href="{{ url('homepage') }}player/2">Second Player</a></li>
+                        <li><a href="{{ url('homepage') }}player/3">Third Player</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url('homepage') }}player/1">First Player</a></li>
+                <li><a href="{{ url('homepage') }}player/2">Second Player</a></li>
+                <li><a href="{{ url('homepage') }}player/3">Third Player</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="container">
+            <div id="react-container">{% spaceless %}{% block body %}{% endblock %}{% endspaceless%}</div>
+        </div>
+    </div><!-- /.container -->
+
+
+    {% block javascripts %}
+        <script src="{{ asset('./webpack-client/client-bundle.js', 'webpack') }}"></script>
+    {% endblock %}
+  </body>
+</html>
