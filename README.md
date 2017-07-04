@@ -11,31 +11,31 @@ How to run it
 
 First is required to create a database for the project (by default is named 'symfony-react-spa').
     
-    git clone https://github.com/tevdi/symfony-react-spa.git
+    $ git clone https://github.com/tevdi/symfony-react-spa.git
     
 Configure the database in `app/config/parameters.yml` setting the database name, user and password.
     
-    cd symfony-react-spa
-    composer install
+    $ cd symfony-react-spa
+    $ composer install
     
 Create the schema for the database and load the fixtures:
 
-    bin/console doctrine:schema:create
-    bin/console hautelook:fixtures:load
+    $ bin/console doctrine:schema:create
+    $ bin/console hautelook:fixtures:load
 
 Setting up the React app.
 
-    cd spa
-    npm install
+    $ cd spa
+    $ npm install
 
 Building the server-side and client-side react Webpack bundle:
     
-    npm run webpack-serverside
-    npm run webpack-dev
+    $ npm run webpack-serverside
+    $ npm run webpack-dev
     
 And then, run the Symfony server in the root of the project's directory in another terminal:
 
-    bin/console server:start
+    $ bin/console server:start
     
 After this, visit [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
